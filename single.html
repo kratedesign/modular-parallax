@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Modular Parallax</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="utils/v-unit.js"></script><!-- for viewport relative units -->
+	<link rel="stylesheet" href="demo-base.css">
+
+	<style>
+
+		*, *:before, *:after { box-sizing:border-box; margin:0; padding:0; }
+
+		body, html { height:auto; height:120vh; }
+		body { background-color: #0cd; }
+
+		.parallax {
+			-webkit-transform: rotateZ(360deg);
+			transform: rotateZ(360deg);
+			position:relative;
+			z-index:2;
+			height:900px;
+			height:130vh; /*make each section one viewport high */
+			max-height:130vh;
+			overflow:hidden;
+		}
+
+		.parallax-bg {
+			min-height:110vh;
+			background-size: auto 100%; /* image must be that tall too */
+			background-size:cover;
+			background-image:url(http://lorempixel.com/900/500/technics);
+			background-position: center center;
+			background-repeat:no-repeat;
+			background-attachment: scroll;
+			background-origin:center;
+			position:absolute;
+			left:0; right:0; top:0;
+			min-width:100%;
+			z-index:-10;
+		}
+
+		.parallax-content {
+			height:300px;
+			height:60vh; /* height of content portion */
+			width:100%;
+			position:relative;
+			margin-top:600px;
+			margin-top:70vh;    /* visible height of the parallax section */
+			overflow:hidden;
+			z-index:10;
+		}
+
+		/* Demo styles (presentational) */
+		.demo {
+			background:#0cd;
+			padding:20px;
+			color: #fff;
+			font-family:'Open Sans', sans-serif;
+			font-size:22px;
+			font-size:1.75vh;
+			line-height:1.5;
+		}
+
+		header { z-index:20; }
+
+		@media screen and (max-height:600px) {
+			.demo {
+				font-size:11px;
+			}
+		}
+
+	</style>
+</head>
+<body class="krate-demo 100vh">
+	<header class="demo-header" role="banner">
+		<h1>Demo: <a href="../" rel="up">Parallax</a> > <a href="http://demos.kratedev.com/modules/parallax/single" rel="bookmark">Single section</a></h1>
+	</header>
+	<main role="main 100vh">
+		<div class="parallax 100vh">
+			<div id="box" class="parallax-bg 60vh" data-speed="0.3">
+			</div>
+
+			<section class="parallax-content demo 60vh">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, placeat quaerat minus maxime vitae adipisci doloribus officiis repellendus asperiores quos magni cumque error odio! Repudiandae, magni quas similique animi aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, rerum aut aliquid necessitatibus inventore labore dolorum. Voluptate, aperiam, facere, ullam, et reprehenderit velit provident distinctio facilis cumque dolorem cum ab!
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, sequi, labore exercitationem esse eum deleniti voluptatum quos repellendus rerum saepe totam distinctio optio velit! Quos, eius ullam tenetur quidem veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, qui fuga necessitatibus nesciunt nihil vitae maxime alias? Repellendus, soluta, omnis error delectus eveniet at dolores quo quas temporibus sint veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, nam, dolores amet commodi autem aut reprehenderit maiores ex et aspernatur culpa eaque facere officiis accusantium iure doloribus optio tenetur hic!
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, placeat quaerat minus maxime vitae adipisci doloribus officiis repellendus asperiores quos magni cumque error odio! Repudiandae, magni quas similique animi aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, rerum aut aliquid necessitatibus inventore labore dolorum. Voluptate, aperiam, facere, ullam, et reprehenderit velit provident distinctio facilis cumque dolorem cum ab!
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, sequi, labore exercitationem esse eum deleniti voluptatum quos repellendus rerum saepe totam distinctio optio velit! Quos, eius ullam tenetur quidem veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, qui fuga necessitatibus nesciunt nihil vitae maxime alias? Repellendus, soluta, omnis error delectus eveniet at dolores quo quas temporibus sint veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, nam, dolores amet commodi autem aut reprehenderit maiores ex et aspernatur culpa eaque facere officiis accusantium iure doloribus optio tenetur hic!
+			</section>
+		</div>
+	</main>
+	<script src="utils/rAF.js"></script>
+	<script src="utils/getScrollPosition.js"></script>
+	<script src="utils/getSupportedPropertyName.js"></script>
+	<script src="Parallax.js"></script>
+
+	<script>
+				var scrollUs = document.querySelectorAll('.parallax-bg');
+				Parallax.setAll(scrollUs);
+	</script>
+</body>
+</html>
