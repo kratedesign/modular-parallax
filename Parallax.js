@@ -44,7 +44,7 @@
     cutoff = 0;
 
     if ( adjustment <= cutoff ) {
-      el.style[transformProp] = "translateY(" + adjustment + "px) rotateZ(360px)";
+      el.style[transformProp] = "translateY(" + adjustment + "px) rotateZ(360deg)";
     }
   }
 
