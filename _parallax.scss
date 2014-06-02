@@ -1,0 +1,62 @@
+$parallax-height:70vh !default; // How much of each section should be 'background'
+$parallax-content-height:30vh !default; // How much should be foreground
+$parallax-cover: 1.75 !default; // Amount of 'overlap' - can tweak to control image size
+
+@mixin transform3d() {
+	-webkit-transform:rotateZ(360deg);
+	transform:rotateZ(360deg);
+}
+
+@mixin parallax-section($sections) {
+	@include transform3d;
+	position:relative;
+	z-index:10*$sections;
+	overflow:hidden;
+	height: $parallax-height + $parallax-content-height;
+
+	@while $sections > 1 {
+
+		&:nth-of-type(#{$sections}) {
+	    z-index: 10*$sections
+	  }
+	  $sections: $sections - 1;
+	}
+}
+
+@mixin parallax-background() {
+	@include transform3d;
+	position: absolute;
+	left:0; right:0; top:0;
+	min-width:100%;
+	min-height: $parallax-height*$parallax-cover;
+	z-index:-10;
+	background: center no-repeat scroll;
+	background-size:cover;
+}
+
+@mixin parallax-foreground() {
+	width:100%;
+	position:relative;
+	overflow:hidden;
+	z-index:10;
+	min-height:$parallax-content-height;
+	margin-top:$parallax-height;
+}
+
+// Full version, with canonical class naming + structure
+@mixin parallax($sections:3) {
+
+	.parallax {
+		@include parallax-section($sections);
+	}
+
+	.parallax-bg {
+		@include parallax-background();
+	}
+
+	.parallax-content {
+		@include parallax-foreground();
+	}
+
+}
+

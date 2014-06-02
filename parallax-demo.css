@@ -1,0 +1,55 @@
+.demo {
+  background-color: #0cd;
+  color: white;
+  padding: 30px;
+}
+
+.parallax {
+  -webkit-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
+  position: relative;
+  z-index: 30;
+  overflow: hidden;
+  height: 100vh;
+}
+.parallax:nth-of-type(3) {
+  z-index: 30;
+}
+.parallax:nth-of-type(2) {
+  z-index: 20;
+}
+
+.parallax-bg {
+  -webkit-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 122.5vh;
+  z-index: -10;
+  background: center no-repeat scroll;
+  background-size: cover;
+}
+
+.parallax-content {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  min-height: 30vh;
+  margin-top: 70vh;
+}
+
+#section-1 {
+  background-image: url(http://lorempixel.com/900/500/technics);
+}
+
+#section-2 {
+  background-image: url(http://placekitten.com/900/500);
+}
+
+#section-3 {
+  background-image: url(http://lorempixel.com/900/500/abstract);
+}

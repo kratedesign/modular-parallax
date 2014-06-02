@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Modular Parallax</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="utils/v-unit.js"></script><!-- for better viewport relative units -->
+	<link rel="stylesheet" href="demo-base.css">
+	<link rel="stylesheet" href="parallax-demo.css">
+
+</head>
+<body class="krate-demo">
+	<header class="demo-header" role="banner">
+		<h1>Demo: Parallax > <a href="#" rel="bookmark">Multiple sections, dynamic heights</a></h1>
+	</header>
+	<main role="main">
+		<div class="parallax vh100">
+			<div id="section-1" class="parallax-bg vh110" data-speed="0.3"></div>
+
+			<section class="parallax-content demo vh30">
+				Quis, placeat quaerat minus maxime vitae adipisci doloribus officiis repellendus asperiores quos magni cumque error odio! Repudiandae, magni quas similique animi aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, aperiam, facere, ullam, et reprehenderit velit provident distinctio facilis cumque dolorem cum ab!
+			</section>
+
+		</div>
+		<div class="parallax vh100">
+			<div id="section-2" class="parallax-bg vh110" data-speed="0.3"></div>
+
+			<section class="parallax-content demo vh30">
+				Ipsum, qui fuga necessitatibus nesciunt nihil vitae maxime alias? Repellendus, soluta, omnis error delectus eveniet at dolores quo quas temporibus sint veniam. Ducimus, nam, dolores amet commodi autem aut reprehenderit maiores ex et aspernatur culpa eaque facere officiis accusantium iure doloribus optio tenetur hic!
+			</section>
+
+		</div>
+		<div class="parallax vh100">
+			<div id="section-3" class="parallax-bg vh110" data-speed="0.3"> </div>
+
+			<section class="parallax-content demo vh30">
+				Repellendus, soluta, omnis error delectus eveniet at dolores quo quas temporibus sint veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, nam, dolores amet commodi autem aut reprehenderit maiores ex et aspernatur culpa eaque facere officiis accusantium iure doloribus optio tenetur hic!
+			</section>
+
+		</div>
+	</main>
+
+	<script src="utils/rAF.js"></script>
+	<script src="utils/getScrollPosition.js"></script>
+	<script src="utils/getSupportedPropertyName.js"></script>
+	<script src="Parallax.js"></script>
+
+	<script>
+    var scrollUs = document.querySelectorAll('.parallax-bg');
+    Parallax.setAll(scrollUs);
+  </script>
+</body>
+</html>

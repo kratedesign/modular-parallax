@@ -1,0 +1,23 @@
+.demo {
+	background-color:#0cd;
+	color:white;
+	padding:30px;
+}
+
+@import 'parallax';
+
+$sections: 3;
+$parallax-height:70vh;
+$parallax-content-height:30vh;
+
+@include parallax($sections:3);
+
+#section-1 {
+	background-image:url(http://lorempixel.com/900/500/technics);
+}
+#section-2 {
+	background-image:url(http://placekitten.com/900/500);
+}
+#section-3 {
+	background-image:url(http://lorempixel.com/900/500/abstract);
+}

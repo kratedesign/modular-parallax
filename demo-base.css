@@ -1,0 +1,156 @@
+/* demo-base.css
+ * jack@kratedesign.com
+ * updated 11/7/2013
+ */
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* externally-hosted entypo - this is a temporary solution for icons. */
+[class*="entypo-"], .resource-links a { position:relative; margin-left:0.5em; margin-right:0.5em; color:#333;  }
+
+[class*="entypo-"]:before, .resource-links a:before {
+  font-family: 'entypo', sans-serif;
+  position:relative; left:-.25em;
+  color:#e20079;
+}
+
+
+/* base reset with sensible defaults, borrowed mostly from normalize.css
+ * If you find yourself improving these baseline styles, save your changes here
+ * so they can be used in future demos! Generic only - use a unique stylesheet
+ * for demo-specific css. */
+
+	* { -moz-box-sizing:border-box; box-sizing:border-box; }
+
+	article, aside, details, figcaption, figure, footer, header, main, nav, section, summary { display: block; }
+	html { font-family: 'Open Sans', Tahoma, sans-serif; font-weight:400; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+	body { background:#fcfcfc; margin: 0; padding:0; font-size:16px; line-height:1.6; color: #333; }
+
+	h1, h2, h3, h4, h5 { font-size:100%; margin:0; }
+	h1, .alpha { text-align:center; font-size:48px; font-size:3rem; } /* use fallbacks with rems just in case */
+	h2, .beta { text-align:left; font-size:32px; font-size:2rem; }
+	h3, .gamma { font-size:24px; font-size:1.5rem; }
+	h4, .delta { font-size:20px; font-size:1.25rem; }
+	h5, .epsilon { font-size:12px; font-size:0.8rem; }
+
+	a, a:hover, a:focus, a:visited, a:active { outline: 0; text-decoration:none; color:#e20079; }
+	/*a:hover, a:focus { border-bottom:1px dashed; }*/
+
+	h1 a, h1 a:visited { color:#333; }
+	h1 a:hover { color: #e20079; }
+	b, strong { font-weight: bold; }
+	i, em { font-style:italic; }
+
+	/* Uncomment the next line if your demo needs lists that don't look like lists - item grids, etc */
+	/*ul, li, dl, dd, dt, ol { display:block; margin:0; padding:0; list-style:none; }*/
+	pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+	hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
+	img { border: 0; max-width:100%; }
+	figure { margin: 0; }
+	button, input, select, textarea { font-family: inherit; font-size: 100%; margin: 0; line-height: normal; }
+	button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+	small { font-size: 80%; }
+	pre, code, kbd, pre, samp, .code { font-family: 'Monaco', monospace, serif; font-size: 1em; -webkit-font-smoothing:antialiased; font-size:90%; color: #444; tab-size:1; }
+	abbr[title] { border-bottom: 1px dotted; }
+	textarea { overflow: auto; vertical-align: top; }
+
+	q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+	mark { background: #ff0; color: #000; }
+	sub, %sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+	sup { top: -0.5em; }
+  sub { bottom: -0.25em; }
+	legend { border: 0; padding: 0; white-space: normal; }
+	table { border-collapse: collapse; border-spacing: 0; }
+	address { font-style:normal; font-variant:normal; display:inline;}
+
+	section:focus { outline:none; background: #f0f0f0; }
+
+
+/* tweaks to pre/code display, since that's likely to come up
+ * markup: section.code > pre > code > (code goes here)
+ * optionally specify "contenteditable" on the .code div to make it, well, editable.
+ */
+
+.code {
+	padding:0 1em; margin:2em -1em;
+	max-height:20.7em;
+	overflow:scroll;
+	background:#f8f8f8;
+	border:1px solid white;
+	outline:1px solid white;
+}
+	.code:focus {
+		background: #fff;
+		color: #888;
+		border: 1px dashed #e20079;
+	}
+
+/* top and bottom framing */
+
+.demo-header, .demo-footer {
+	position:fixed;
+	width:100%;
+	border:1px solid #e20079;
+	/*border:1px solid #fff;*/
+	/*box-shadow: 0 0 4px 1px #888;*/
+	padding:0.5em;
+	font-size:80%;
+	background:#fff; z-index:10;
+}
+
+.demo-header {
+	top:0; border-width:0 0 1px;
+	font-size:13px;
+	 }
+
+.demo-header h1 { float:left; font-size:16px; }
+.demo-nav { float:left; margin-top:0.25em; }
+
+.resource-links {
+	display:inline-block;
+	margin:.25em 0 0 0;
+	padding:0;
+	}
+
+.resource-links a {   }
+
+.demo-footer {
+	position:fixed;
+	bottom:0;
+	border-width:1px 0 0;
+	text-align: right;
+ }
+
+@media (min-width:1000px) {
+	.demo-nav { margin-left:5em; margin-top:0.25em; }
+	.resource-links {
+		margin-top:0;
+		padding-left:1.25em;
+		border-left:1px solid #ccc;
+	}
+}
+
+ /* the main event  */
+
+.demo-content {
+ 	position:relative;
+ 	top:5em;
+ 	height:100%;
+ 	overflow:scroll;
+ 	padding-top:1em;
+	tab-size:2;
+	padding-bottom:3em;
+	-webkit-font-smoothing:antialiased;
+}
+
+
+
+ /* (you may need to remove this next bit if the demo needs to use the full window width) */
+
+  .page {
+  	width:100%;
+  	padding:0 1em;
+  	max-width:60em;
+  	margin:auto;
+  }
