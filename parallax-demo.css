@@ -5,8 +5,8 @@
 }
 
 .parallax {
-  -webkit-transform: rotateZ(360deg);
-  transform: rotateZ(360deg);
+  -webkit-transform: translateZ(0px);
+  transform: translateZ(0px);
   position: relative;
   z-index: 30;
   overflow: hidden;
@@ -40,6 +40,8 @@
   z-index: 10;
   min-height: 30vh;
   margin-top: 70vh;
+    -webkit-transform: translateZ(0px);
+  transform: translateZ(0px);
 }
 
 #section-1 {
