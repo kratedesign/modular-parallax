@@ -15,8 +15,7 @@
 
     *, *:before, *:after { box-sizing:border-box; margin:0; padding:0; }
 
-
-    body { background-color: #0cd; }
+    body { background: #fff; }
 
     .parallax { -webkit-transform: rotateZ(360deg);
       -moz-transform: rotateZ(360deg);
@@ -39,11 +38,10 @@
     .parallax-bg {
       min-height:calc(2*600px); /* must be tall enough to cover the open space and then some */
       background-size: auto 100%; /* image must be that tall too */
-      background-image:url(http://lorempixel.com/900/500/technics);
-      background-position:  center center;
+      background-image:url(images/office1.jpg);
+      background-position:  center bottom;
       background-repeat:no-repeat;
       background-attachment: scroll;
-      background-origin:center;
       position:absolute; left:0; right:0; top:0;
       min-width:100%;
       z-index:-10;
@@ -52,7 +50,11 @@
     }
 
     #box2 {
-      background-image:url(http://lorempixel.com/900/500/people);
+      background-image:url(images/board1.jpg);
+    }
+
+    #box3 {
+      background-image:url(images/ocho1.jpg);
     }
 
     .parallax-content {
@@ -62,21 +64,19 @@
       margin-top:600px;
       overflow:hidden;
       z-index:10;
-      /* this is the visible height of the parallax section */
-
     }
-    /* Demo styles (presentational) */
+
+  /* Demo styles (presentational) */
     .demo {
-      background:#0cd;
+      background: #fff;
+      border:2px solid;
+      border-width:2px 0;
+      color: #e20079;
       padding:50px;
-      color: #fff;
       font-family:'Open Sans', sans-serif;
-      font-size:22px;
-      font-size:2vh;
-      line-height:1.6;
     }
 
-    @media screen and (max-height:600px) {
+        @media screen and (max-height:600px) {
       .demo {
         padding:20px;
         font-size:11px;
@@ -86,36 +86,45 @@
 
     header { z-index:20; }
 
+
   </style>
 </head>
 
 <body class="krate-demo">
   <header class="demo-header" role="banner">
-    <h1>Demo: <a href="../" rel="up">Parallax</a> > <a href="http://demos.kratedev.com/modules/parallax/multiple-scaling" rel="bookmark">Multiple sections, dynamic heights</a></h1>
+    <h1><a href="#">Demos</a> > <a href="#" rel="up">Parallax</a> > <a href="http://demos.kratedev.com/modules/parallax/multiple-nonscaling" rel="bookmark">Multiple sections, static heights</a></h1>
   </header>
   <main role="main">
-    <div class="parallax vh100">
-      <div id="box" class="parallax-bg vh110" data-speed="0.3"></div>
+    <div class="parallax">
+      <div id="box" class="parallax-bg" data-speed="0.3"></div>
 
-      <section class="parallax-content demo vh30">
-        Quis, placeat quaerat minus maxime vitae adipisci doloribus officiis repellendus asperiores quos magni cumque error odio! Repudiandae, magni quas similique animi aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, aperiam, facere, ullam, et reprehenderit velit provident distinctio facilis cumque dolorem cum ab!
+      <section class="parallax-content demo">
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, sequi, labore exercitationem esse eum deleniti voluptatum quos repellendus rerum saepe totam distinctio optio velit! Quos, eius ullam tenetur quidem veniam.
+
       </section>
+
 
     </div>
-    <div class="parallax vh100">
-      <div id="box2" class="parallax-bg vh110" data-speed="0.3"></div>
+    <div class="parallax">
+      <div id="box2" class="parallax-bg" data-speed="0.3"></div>
 
-      <section class="parallax-content demo vh30">
-        Ipsum, qui fuga necessitatibus nesciunt nihil vitae maxime alias? Repellendus, soluta, omnis error delectus eveniet at dolores quo quas temporibus sint veniam. Ducimus, nam, dolores amet commodi autem aut reprehenderit maiores ex et aspernatur culpa eaque facere officiis accusantium iure doloribus optio tenetur hic!
+      <section class="parallax-content demo">
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, sequi, labore exercitationem esse eum deleniti voluptatum quos repellendus rerum saepe totam distinctio optio velit! Quos, eius ullam tenetur quidem veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
       </section>
+
 
     </div>
-    <div class="parallax vh100">
-      <div id="box3" class="parallax-bg vh110" data-speed="0.3"> </div>
+    <div class="parallax">
+      <div id="box3" class="parallax-bg" data-speed="0.3"> </div>
 
-      <section class="parallax-content demo vh30">
-        Repellendus, soluta, omnis error delectus eveniet at dolores quo quas temporibus sint veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, nam, dolores amet commodi autem aut reprehenderit maiores ex et aspernatur culpa eaque facere officiis accusantium iure doloribus optio tenetur hic!
+      <section class="parallax-content demo">
+        Ducimus, nam, dolores amet commodi autem aut reprehenderit maiores ex et aspernatur culpa eaque facere officiis accusantium iure doloribus optio tenetur hic!
+
       </section>
+
 
     </div>
   </main>
@@ -126,8 +135,9 @@
   <script src="Parallax.js"></script>
 
   <script>
-    var scrollUs = document.querySelectorAll('.parallax-bg');
-    Parallax.setAll(scrollUs);
-  </script>
-</body>
-</html>
+        // var fixMe = document.querySelector('header');
+        var scrollUs = document.querySelectorAll('.parallax-bg');
+        Parallax.setAll(scrollUs);
+      </script>
+    </body>
+    </html>
