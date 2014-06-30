@@ -95,16 +95,6 @@
   }
 
 
-  function bindListeners() {
-    window.addEventListener('scroll', onScroll, false);
-    active = true;
-
-    if( debugging ) {
-      console.log('Parallax started');
-    }
-  };
-
-
   /* Add one element to an existing parallax */
 
   function add(ele) {
