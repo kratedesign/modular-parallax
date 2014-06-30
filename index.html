@@ -6,53 +6,134 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Modular Parallax</title>
+	<title>Parallax: multiple viewport-sized sections</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="utils/v-unit.js"></script><!-- for better viewport relative units -->
-	<link rel="stylesheet" href="demo-base.css">
-	<link rel="stylesheet" href="parallax-demo.css">
+ <link rel="stylesheet" href="demo-base.css">
+	<style>
+
+		*, *:before, *:after { box-sizing:border-box; margin:0; padding:0; }
+
+		body, html { height:2700px; height:300vh; background-color: #fff; }
+
+		.parallax {
+			-webkit-transform: rotateZ(360deg);
+			transform: rotateZ(360deg);
+			position:relative;
+			z-index:2;
+			height:900px;
+			 height:100vh; /*make each section one viewport high */
+			max-height:100vh;
+			overflow:hidden;
+		}
+
+		.parallax:nth-of-type(2) { z-index:1; }
+		.parallax:nth-of-type(3) { z-index:0; }
+
+		.parallax-bg {
+			min-height:110vh;
+			background-size:cover;
+			background-size: auto 100%; /* image must be that tall too */
+			background-image:url(images/board1.jpg);
+			background-position: center center;
+			background-repeat:no-repeat;
+			background-attachment: scroll;
+			background-origin:center;
+			position:absolute;
+			left:0; right:0; top:0;
+			min-width:100%;
+			z-index:-10;
+		}
+
+		#box2 {
+			background-image:url(images/office1.jpg);
+		}
+
+		#box3 {
+			background-image:url(images/ocho1.jpg);
+		}
+
+
+
+
+		.parallax-content {
+			height:300px;
+			height:30vh; /* height of content portion */
+			width:100%;
+			position:relative;
+			margin-top:600px;
+			margin-top:70vh; 	/* visible height of the parallax section */
+			overflow:hidden;
+			z-index:10;
+		}
+
+		/* Demo styles (presentational) */
+		.demo {
+			background: #fff;
+			border:2px solid;
+			border-width:2px 0;
+			color: #e20079;
+			padding:50px;
+			font-family:'Open Sans', sans-serif;
+		}
+
+		@media screen and (max-height:600px) {
+			.demo {
+				padding:20px;
+				font-size:11px;
+				line-height:1.5;
+			}
+		}
+
+
+		header { z-index:20; }
+
+	</style>
 
 </head>
 <body class="krate-demo">
-	<header class="demo-header" role="banner">
-		<h1>Demo: Parallax > <a href="#" rel="bookmark">Multiple sections, dynamic heights</a></h1>
-	</header>
-	<main role="main">
-		<div class="parallax vh100">
-			<div id="section-1" class="parallax-bg vh110" data-speed="0.3"></div>
+    <header class="demo-header" role="banner">
+      <h1><a href="#">Demos</a> > <a href="#" rel="">Parallax</a> > <a href="http://demos.kratedev.com/modules/parallax/multiple-scaling" rel="bookmark">Multiple sections, dynamic heights</a></h1>
+</header>
+<main role="main">
+	<div class="parallax vh100">
+		<div id="box" class="parallax-bg vh110" data-speed="0.3"></div>
 
-			<section class="parallax-content demo vh30">
-				Quis, placeat quaerat minus maxime vitae adipisci doloribus officiis repellendus asperiores quos magni cumque error odio! Repudiandae, magni quas similique animi aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, aperiam, facere, ullam, et reprehenderit velit provident distinctio facilis cumque dolorem cum ab!
-			</section>
+		<section class="parallax-content demo vh30">
+			Quis, placeat quaerat minus maxime vitae adipisci doloribus officiis repellendus asperiores quos magni cumque error odio! Repudiandae, magni quas similique animi aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, aperiam, facere, ullam, et reprehenderit velit provident distinctio facilis cumque dolorem cum ab!
+		</section>
 
-		</div>
-		<div class="parallax vh100">
-			<div id="section-2" class="parallax-bg vh110" data-speed="0.3"></div>
 
-			<section class="parallax-content demo vh30">
-				Ipsum, qui fuga necessitatibus nesciunt nihil vitae maxime alias? Repellendus, soluta, omnis error delectus eveniet at dolores quo quas temporibus sint veniam. Ducimus, nam, dolores amet commodi autem aut reprehenderit maiores ex et aspernatur culpa eaque facere officiis accusantium iure doloribus optio tenetur hic!
-			</section>
+	</div>
+	<div class="parallax vh100">
+		<div id="box2" class="parallax-bg vh110" data-speed="0.3"></div>
 
-		</div>
-		<div class="parallax vh100">
-			<div id="section-3" class="parallax-bg vh110" data-speed="0.3"> </div>
+		<section class="parallax-content demo vh30">
+			Ipsum, qui fuga necessitatibus nesciunt nihil vitae maxime alias? Repellendus, soluta, omnis error delectus eveniet at dolores quo quas temporibus sint veniam. Ducimus, nam, dolores amet commodi autem aut reprehenderit maiores ex et aspernatur culpa eaque facere officiis accusantium iure doloribus optio tenetur hic!
+		</section>
 
-			<section class="parallax-content demo vh30">
-				Repellendus, soluta, omnis error delectus eveniet at dolores quo quas temporibus sint veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, nam, dolores amet commodi autem aut reprehenderit maiores ex et aspernatur culpa eaque facere officiis accusantium iure doloribus optio tenetur hic!
-			</section>
 
-		</div>
+	</div>
+	<div class="parallax vh100">
+		<div id="box3" class="parallax-bg vh110" data-speed="0.3"> </div>
+
+		<section class="parallax-content demo vh30">
+			Repellendus, soluta, omnis error delectus eveniet at dolores quo quas temporibus sint veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, nam, dolores amet commodi autem aut reprehenderit maiores ex et aspernatur culpa eaque facere officiis accusantium iure doloribus optio tenetur hic!
+		</section>
+
+	</div>
 	</main>
 
-	<script src="utils/rAF.js"></script>
-	<script src="utils/getScrollPosition.js"></script>
-	<script src="utils/getSupportedPropertyName.js"></script>
-	<script src="Parallax.js"></script>
+    <script src="utils/rAF.js"></script>
+    <script src="utils/getScrollPosition.js"></script>
+    <script src="utils/getSupportedPropertyName.js"></script>
+    <script src="Parallax.js"></script>
 
-	<script>
-    var scrollUs = document.querySelectorAll('.parallax-bg');
-    Parallax.setAll(scrollUs);
-  </script>
+    <script>
+        // var fixMe = document.querySelector('header');
+        var scrollUs = document.querySelectorAll('.parallax-bg');
+        Parallax.setAll(scrollUs);
+    </script>
 </body>
 </html>
